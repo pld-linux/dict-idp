@@ -18,15 +18,23 @@ License:	GPL
 # compatible w/ Gnu GPL ???
 Group:		Applications/Dictionaries
 Source0:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
+# Source0-md5:	893caf92b6b0bde075faa610cdcad162
 Source1:	http://www.aracnet.com/~tyler/IDP/files/%{dict2}.txt
+# Source1-md5:	2228f34eef12289a0aec6892e503fd1f
 Source2:	http://www.aracnet.com/~tyler/IDP/files/%{dict3}.txt
+# Source2-md5:	39637589eaed62612a97f721c8b42cab
 Source3:	http://www.aracnet.com/~tyler/IDP/files/%{dict4}.txt
+# Source3-md5:	eca10dc263c32ea0090c49cef70a3a5f
 Source4:	http://www.aracnet.com/~tyler/IDP/files/%{dict5}.txt
+# Source4-md5:	a90cd624de7c6afb5aea70153af05ad6
 Source5:	http://www.aracnet.com/~tyler/IDP/files/%{dict6}.txt
+# Source5-md5:	4a9b422b98e957627d3d143ab7f26743
 #Source91:	http://www.wh9.tu-dresden.de/~heinrich/dict/dict_idp/idp2dict.sh
 # copyright info:
 Source98:	http://www.june29.com/IDP/IDPcopyright.html
+# Source98-md5:	5128ae048e20870c549807eecd8031ac
 Source99:	http://www.june29.com/IDP/IDPdisclaimer.html
+# Source99-md5:	d2062ea10b27d0b4c59446600b3bb3b1
 URL:		http://www.june29.com/IDP/
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
