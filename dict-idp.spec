@@ -1,11 +1,11 @@
-%define	dictname    IDP
-%define	dict1	French
-%define	dict2	German
-%define	dict3	Italian
-%define	dict4	Latin
-%define	dict5 	Portuguese
-%define	dict6 	Spanish
-%define   dictionaries %{dict1} %{dict2} %{dict3} %{dict4} %{dict5} %{dict6}
+%define		dictname	IDP
+%define		dict1		French
+%define		dict2		German
+%define		dict3		Italian
+%define		dict4		Latin
+%define		dict5	 	Portuguese
+%define		dict6		Spanish
+%define		dictionaries	%{dict1} %{dict2} %{dict3} %{dict4} %{dict5} %{dict6}
 
 Summary:	The Free dictionaries for dictd made from IDP project
 Summary(pl):	Darmowe S³owniki dla dictd z projektu IDP
@@ -164,17 +164,17 @@ cp %{Source6} idp/
 echo "Making %{dictionaries}"
 all_targets=""
 for x in *.txt ; do
-    target=idp_`echo $x | cut -f1 -d.`
-    all_targets=$all_targets" "$target
-    echo '%h 00-database-info' > $target
-    echo '%d' >> $target
-    grep '^#' $x >> $target
-    grep -v '^#' $x | awk 'BEGIN{FS="\t"}{print "%h "$1; print "%d" ; print "\t"$2"\n" }' >> $target
+	target=idp_`echo $x | cut -f1 -d.`
+	all_targets=$all_targets" "$target
+	echo '%h 00-database-info' > $target
+	echo '%d' >> $target
+	grep '^#' $x >> $target
+	grep -v '^#' $x | awk 'BEGIN{FS="\t"}{print "%h "$1; print "%d" ; print "\t"$2"\n" }' >> $target
 done
 
 for x in $all_targets ; do
-    dictfmt -p -u "%{URL}" -s "Internet Dictionary Project"  $x < $x
-    dictzip  $x'.dict'
+	dictfmt -p -u "%{URL}" -s "Internet Dictionary Project"  $x < $x
+	dictzip  $x'.dict'
 done
 
 %install
@@ -182,14 +182,14 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_datadir}/dictd/,%{_sysconfdir}/dictd}
 
 for i in %{dictionaries}; do
-  dictprefix=%{_datadir}/dictd/%{dictname}_$i
-  echo "# The Internet Dictionary Project dictionaries
-  database $i {
-    data \"$dictprefix.dict.dz\"
-    index \"$dictprefix.index\"
-  }
-  " > $RPM_BUILD_ROOT%{_sysconfdir}/dictd/%{dictname}-$i.dictconf
-  install %{dictname}_$i* $RPM_BUILD_ROOT%{_datadir}/dictd/
+	dictprefix=%{_datadir}/dictd/%{dictname}_$i
+	echo "# The Internet Dictionary Project dictionaries
+	database $i {
+		data \"$dictprefix.dict.dz\"
+		index \"$dictprefix.index\"
+	}
+	" > $RPM_BUILD_ROOT%{_sysconfdir}/dictd/%{dictname}-$i.dictconf
+	install %{dictname}_$i* $RPM_BUILD_ROOT%{_datadir}/dictd/
 done
 
 %clean
@@ -207,22 +207,22 @@ fi
 
 %postun %{dict1}
 if [ -f /var/lock/subsys/dictd ]; then
-/etc/rc.d/init.d/dictd restart 1>&2 || true
+	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %post %{dict1}
-  if [ -f /var/lock/subsys/dictd ]; then
-  /etc/rc.d/init.d/dictd restart 1>&2
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2
 fi
 
 %postun %{dict2}
 if [ -f /var/lock/subsys/dictd ]; then
-/etc/rc.d/init.d/dictd restart 1>&2 || true
+	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %post %{dict2}
-  if [ -f /var/lock/subsys/dictd ]; then
-  /etc/rc.d/init.d/dictd restart 1>&2
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2
 fi
 %postun %{dict3}
 if [ -f /var/lock/subsys/dictd ]; then
@@ -233,41 +233,45 @@ fi
   if [ -f /var/lock/subsys/dictd ]; then
   /etc/rc.d/init.d/dictd restart 1>&2
 fi
+
 %postun %{dict4}
 if [ -f /var/lock/subsys/dictd ]; then
-/etc/rc.d/init.d/dictd restart 1>&2 || true
+	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %post %{dict4}
-  if [ -f /var/lock/subsys/dictd ]; then
-  /etc/rc.d/init.d/dictd restart 1>&2
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2
 fi
+
 %postun %{dict5}
 if [ -f /var/lock/subsys/dictd ]; then
-/etc/rc.d/init.d/dictd restart 1>&2 || true
+	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %post %{dict5}
-  if [ -f /var/lock/subsys/dictd ]; then
-  /etc/rc.d/init.d/dictd restart 1>&2
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2
 fi
+
 %postun %{dict6}
 if [ -f /var/lock/subsys/dictd ]; then
 /etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %post %{dict6}
-  if [ -f /var/lock/subsys/dictd ]; then
-  /etc/rc.d/init.d/dictd restart 1>&2
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2
 fi
+
 %postun %{dict7}
 if [ -f /var/lock/subsys/dictd ]; then
-/etc/rc.d/init.d/dictd restart 1>&2 || true
+	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %post %{dict7}
-  if [ -f /var/lock/subsys/dictd ]; then
-  /etc/rc.d/init.d/dictd restart 1>&2
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2
 fi
 
 %files %{dict1}
