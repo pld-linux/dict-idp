@@ -18,11 +18,11 @@ License:	GPL
 # compatible w/ Gnu GPL ???
 Group:		Applications/Dictionaries
 Source1:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
-Source2:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
-Source3:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
-Source4:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
-Source5:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
-Source6:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
+Source2:	http://www.aracnet.com/~tyler/IDP/files/%{dict2}.txt
+Source3:	http://www.aracnet.com/~tyler/IDP/files/%{dict3}.txt
+Source4:	http://www.aracnet.com/~tyler/IDP/files/%{dict4}.txt
+Source5:	http://www.aracnet.com/~tyler/IDP/files/%{dict5}.txt
+Source6:	http://www.aracnet.com/~tyler/IDP/files/%{dict6}.txt
 #Source91:   www.wh9.tu-dresden.de/%7Eheinrich/dict/dict_idp/idp2dict.sh
 # copyright info:
 Source98:	http://www.june29.com/IDP/IDPcopyright.html
