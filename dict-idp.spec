@@ -7,8 +7,8 @@
 %define		dict6		Spanish
 %define		dictionaries	%{dict1} %{dict2} %{dict3} %{dict4} %{dict5} %{dict6}
 
-Summary:	The Free dictionaries for dictd made from IDP project
-Summary(pl):	Darmowe S³owniki dla dictd z projektu IDP
+Summary:	The free dictionaries for dictd made from IDP project
+Summary(pl):	Darmowe s³owniki dla dictd z projektu IDP
 Name:		dict-%{dictname}
 Version:	19990219
 # Last update on their site
@@ -46,7 +46,7 @@ then made available through this site to anyone, with no restrictions
 on their use.
 
 %description -l pl
-Ten pakiet zawiera darmowe s³owniki z Internet Dictionary Project w
+Ten pakiet zawiera darmowe s³owniki z Internet Dictionary Project
 sformatowane do u¿ytku z serwerem s³ownika dictd. Celem Internet
 Dictionary Project jest stworzenie wolnych od op³at s³owników
 t³umaczeñ w oparciu o pomoc spo³eczno¶ci internetowej. Serwis IDP
@@ -55,7 +55,7 @@ s³ów na inne jêzyki. Powsta³e w ten sposób listy angielskich s³ów i
 ich t³umaczeñ s± udostêpniane wszystkim, do nieograniczonego u¿ytku.
 
 %package %{dict1}
-Summary:	The %{dict1} Dictionary for dictd
+Summary:	The %{dict1} dictionary for dictd
 Summary(pl):	S³ownik %{dict1} dla dictd
 Group:		Applications/Dictionaries
 Requires:	dictd
@@ -70,7 +70,7 @@ Ten pakiet zawiera s³ownik %{dict1} do u¿ywania z serwerem s³ownika
 dictd.
 
 %package %{dict2}
-Summary:	The %{dict2} Dictionary for dictd
+Summary:	The %{dict2} dictionary for dictd
 Summary(pl):	S³ownik %{dict2} dla dictd
 Group:		Applications/Dictionaries
 Requires:	dictd
@@ -85,7 +85,7 @@ Ten pakiet zawiera s³ownik %{dict2} do u¿ywania z serwerem s³ownika
 dictd.
 
 %package %{dict3}
-Summary:	The %{dict3} Dictionary for dictd
+Summary:	The %{dict3} dictionary for dictd
 Summary(pl):	S³ownik %{dict3} dla dictd
 Group:		Applications/Dictionaries
 Requires:	dictd
@@ -100,7 +100,7 @@ Ten pakiet zawiera s³ownik %{dict3} do u¿ywania z serwerem s³ownika
 dictd.
 
 %package %{dict4}
-Summary:	The %{dict4} Dictionary for dictd
+Summary:	The %{dict4} dictionary for dictd
 Summary(pl):	S³ownik %{dict4} dla dictd
 Group:		Applications/Dictionaries
 Requires:	dictd
@@ -115,7 +115,7 @@ Ten pakiet zawiera s³ownik %{dict4} do u¿ywania z serwerem s³ownika
 dictd.
 
 %package %{dict5}
-Summary:	The %{dict5} Dictionary for dictd
+Summary:	The %{dict5} dictionary for dictd
 Summary(pl):	S³ownik %{dict5} dla dictd
 Group:		Applications/Dictionaries
 Requires:	dictd
@@ -130,7 +130,7 @@ Ten pakiet zawiera s³ownik %{dict5} do u¿ywania z serwerem s³ownika
 dictd.
 
 %package %{dict6}
-Summary:	The %{dict6} Dictionary for dictd
+Summary:	The %{dict6} dictionary for dictd
 Summary(pl):	S³ownik %{dict6} dla dictd
 Group:		Applications/Dictionaries
 Requires:	dictd
@@ -151,7 +151,7 @@ cp -f %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} .
 %build
 echo "Making %{dictionaries}"
 all_targets=""
-for x in *.txt ; do
+for x in *.txt; do
 	target=%{dictname}_`echo $x | cut -f1 -d.`
 	all_targets="$all_targets $target"
 	echo '%h 00-database-info' > $target
@@ -161,7 +161,7 @@ for x in *.txt ; do
 done
 
 for x in $all_targets ; do
-	dictfmt -p -u "%{URL}" -s "Internet Dictionary Project" $x < $x
+	dictfmt -p -u "%url" -s "Internet Dictionary Project" $x < $x
 	dictzip $x.dict
 done
 
@@ -176,7 +176,7 @@ database $i {
 	data  \"$dictprefix.dict.dz\"
 	index \"$dictprefix.index\"
 }" > $RPM_BUILD_ROOT%{_sysconfdir}/dictd/%{dictname}-$i.dictconf
-	install %{dictname}_$i.* $RPM_BUILD_ROOT%{_datadir}/dictd/
+	mv %{dictname}_$i.* $RPM_BUILD_ROOT%{_datadir}/dictd
 done
 
 %clean
