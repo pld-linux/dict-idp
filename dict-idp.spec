@@ -183,12 +183,17 @@ done
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post %{dict1}
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2
+fi
+
 %postun %{dict1}
 if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
-%post %{dict1}
+%post %{dict2}
 if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2
 fi
@@ -198,21 +203,12 @@ if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
-%post %{dict2}
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2
-fi
-%postun %{dict3}
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2 || true
-fi
-
 %post %{dict3}
 if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2
 fi
 
-%postun %{dict4}
+%postun %{dict3}
 if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
@@ -222,7 +218,7 @@ if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2
 fi
 
-%postun %{dict5}
+%postun %{dict4}
 if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
@@ -232,14 +228,19 @@ if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2
 fi
 
-%postun %{dict6}
+%postun %{dict5}
 if [ -f /var/lock/subsys/dictd ]; then
-/etc/rc.d/init.d/dictd restart 1>&2 || true
+	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %post %{dict6}
 if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2
+fi
+
+%postun %{dict6}
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %files %{dict1}
