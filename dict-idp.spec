@@ -12,7 +12,7 @@ Summary(pl):	Darmowe s³owniki dla dictd z projektu IDP
 Name:		dict-%{dictname}
 Version:	19990219
 # Last update on their site
-Release:	2
+Release:	3
 License:	GPL
 # is this '#This file is free to use and modify. Thank you for using the IDP.'
 # compatible w/ Gnu GPL ???
