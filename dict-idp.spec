@@ -151,6 +151,7 @@ Requires:	%{_sysconfdir}/dictd
 This package contains %{dict7} dictionaries for use by the dicitonary
 server in the dictd package.
 
+%prep
 %setup
 mkdir idp
 cp %{Source1} idp/
