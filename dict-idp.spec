@@ -153,7 +153,7 @@ echo "Making %{dictionaries}"
 all_targets=""
 for x in *.txt ; do
 	target=%{dictname}_`echo $x | cut -f1 -d.`
-	all_targets=$all_targets" "$target
+	all_targets="$all_targets $target"
 	echo '%h 00-database-info' > $target
 	echo '%d' >> $target
 	grep '^#' $x >> $target
@@ -162,7 +162,7 @@ done
 
 for x in $all_targets ; do
 	dictfmt -p -u "%{URL}" -s "Internet Dictionary Project" $x < $x
-	dictzip $x'.dict'
+	dictzip $x.dict
 done
 
 %install
