@@ -17,38 +17,42 @@ License:	GPL
 # is this '#This file is free to use and modify.  Thank you for using the IDP.'
 # compatible w/ Gnu GPL ???
 Group:		Applications/Dictionaries
-Source1:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
-Source2:	http://www.aracnet.com/~tyler/IDP/files/%{dict2}.txt
-Source3:	http://www.aracnet.com/~tyler/IDP/files/%{dict3}.txt
-Source4:	http://www.aracnet.com/~tyler/IDP/files/%{dict4}.txt
-Source5:	http://www.aracnet.com/~tyler/IDP/files/%{dict5}.txt
-Source6:	http://www.aracnet.com/~tyler/IDP/files/%{dict6}.txt
+Source0:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
+Source1:	http://www.aracnet.com/~tyler/IDP/files/%{dict2}.txt
+Source2:	http://www.aracnet.com/~tyler/IDP/files/%{dict3}.txt
+Source3:	http://www.aracnet.com/~tyler/IDP/files/%{dict4}.txt
+Source4:	http://www.aracnet.com/~tyler/IDP/files/%{dict5}.txt
+Source5:	http://www.aracnet.com/~tyler/IDP/files/%{dict6}.txt
 #Source91:   www.wh9.tu-dresden.de/%7Eheinrich/dict/dict_idp/idp2dict.sh
 # copyright info:
 Source98:	http://www.june29.com/IDP/IDPcopyright.html
 Source99:	http://www.june29.com/IDP/IDPdisclaimer.html
 URL:		http://www.june29.com/IDP/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRequires:	dictfmt
 BuildRequires:	dictzip
-BuildRequires:	autoconf
 Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
 
 %description
 This package contains The Internet Dictionary Project's dictionaries,
-version %version formatted for use by the dictionary server in the
-dictd package. The Internet Dictionary Project's goal is to create
-royalty-free translating dictionaries through the help of the
-Internet's citizens. This site allows individuals from all over the
-world to visit and assist in the translation of English words into
-other languages. The resulting lists of English words and their
-translated counterparts are then made available through this site to
-anyone, with no restrictions on their use. Please enjoy your visit,
-and thank you for donating your time to this project.
+formatted for use by the dictionary server in the dictd package. The
+Internet Dictionary Project's goal is to create royalty-free
+translating dictionaries through the help of the Internet's citizens.
+The IDP site allows individuals from all over the world to visit and
+assist in the translation of English words into other languages. The
+resulting lists of English words and their translated counterparts are
+then made available through this site to anyone, with no restrictions
+on their use.
 
 %description -l pl
 Ten pakiet zawiera darmowe s³owniki z Internet Dictionary Project w
-wersji %version sformatowane do u¿ytku z serwerem s³ownika dictd.
+sformatowane do u¿ytku z serwerem s³ownika dictd. Celem Internet
+Dictionary Project jest stworzenie wolnych od op³at s³owników
+t³umaczeñ w oparciu o pomoc spo³eczno¶ci internetowej. Serwis IDP
+pozwala ludziom z ca³ego ¶wiata na pomoc przy t³umaczeniu angielskich
+s³ów na inne jêzyki. Powsta³e w ten sposób listy angielskich s³ów i
+ich t³umaczeñ s± udostêpniane wszystkim, do nieograniczonego u¿ytku.
 
 %package %{dict1}
 Summary:	The %{dict1} Dictionary for dictd
@@ -58,7 +62,7 @@ Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
 
 %description %{dict1}
-This package contains %{dict1} dictionaries for use by the dicitonary
+This package contains %{dict1} dictionaries for use by the dictionary
 server in the dictd package.
 
 %description %{dict1} -l pl
@@ -73,7 +77,7 @@ Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
 
 %description %{dict2}
-This package contains %{dict2} dictionaries for use by the dicitonary
+This package contains %{dict2} dictionaries for use by the dictionary
 server in the dictd package.
 
 %description %{dict2} -l pl
@@ -88,7 +92,7 @@ Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
 
 %description %{dict3}
-This package contains %{dict3} dictionaries for use by the dicitonary
+This package contains %{dict3} dictionaries for use by the dictionary
 server in the dictd package.
 
 %description %{dict3} -l pl
@@ -103,7 +107,7 @@ Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
 
 %description %{dict4}
-This package contains %{dict4} dictionaries for use by the dicitonary
+This package contains %{dict4} dictionaries for use by the dictionary
 server in the dictd package.
 
 %description %{dict4} -l pl
@@ -118,7 +122,7 @@ Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
 
 %description %{dict5}
-This package contains %{dict5} dictionaries for use by the dicitonary
+This package contains %{dict5} dictionaries for use by the dictionary
 server in the dictd package.
 
 %description %{dict5} -l pl
@@ -133,39 +137,22 @@ Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
 
 %description %{dict6}
-This package contains %{dict6} dictionaries for use by the dicitonary
+This package contains %{dict6} dictionaries for use by the dictionary
 server in the dictd package.
 
 %description %{dict6} -l pl
 Ten pakiet zawiera s³ownik %{dict6} do u¿ywania z serwerem s³ownika
 dictd.
 
-%package %{dict7}
-Summary:	The %{dict7} Dictionary for dictd
-Summary(pl):	S³ownik %{dict7} dla dictd
-Group:		Applications/Dictionaries
-Requires:	dictd
-Requires:	%{_sysconfdir}/dictd
-
-%description %{dict7}
-This package contains %{dict7} dictionaries for use by the dicitonary
-server in the dictd package.
-
 %prep
-%setup
-mkdir idp
-cp %{Source1} idp/
-cp %{Source2} idp/
-cp %{Source3} idp/
-cp %{Source4} idp/
-cp %{Source5} idp/
-cp %{Source6} idp/
+%setup -c -T
+cp -f %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} .
 
 %build
 echo "Making %{dictionaries}"
 all_targets=""
 for x in *.txt ; do
-	target=idp_`echo $x | cut -f1 -d.`
+	target=%{dictname}_`echo $x | cut -f1 -d.`
 	all_targets=$all_targets" "$target
 	echo '%h 00-database-info' > $target
 	echo '%d' >> $target
@@ -196,16 +183,6 @@ done
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%postun
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2
-fi
-
-%post
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2
-fi
-
 %postun %{dict1}
 if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2 || true
@@ -227,12 +204,12 @@ if [ -f /var/lock/subsys/dictd ]; then
 fi
 %postun %{dict3}
 if [ -f /var/lock/subsys/dictd ]; then
-/etc/rc.d/init.d/dictd restart 1>&2 || true
+	/etc/rc.d/init.d/dictd restart 1>&2 || true
 fi
 
 %post %{dict3}
-  if [ -f /var/lock/subsys/dictd ]; then
-  /etc/rc.d/init.d/dictd restart 1>&2
+if [ -f /var/lock/subsys/dictd ]; then
+	/etc/rc.d/init.d/dictd restart 1>&2
 fi
 
 %postun %{dict4}
@@ -261,16 +238,6 @@ if [ -f /var/lock/subsys/dictd ]; then
 fi
 
 %post %{dict6}
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2
-fi
-
-%postun %{dict7}
-if [ -f /var/lock/subsys/dictd ]; then
-	/etc/rc.d/init.d/dictd restart 1>&2 || true
-fi
-
-%post %{dict7}
 if [ -f /var/lock/subsys/dictd ]; then
 	/etc/rc.d/init.d/dictd restart 1>&2
 fi
@@ -304,8 +271,3 @@ fi
 %defattr(644,root,root,755)
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict6}.dictconf
 %{_datadir}/dictd/%{dictname}_%{dict6}*
-
-%files %{dict7}
-%defattr(644,root,root,755)
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict7}.dictconf
-%{_datadir}/dictd/%{dictname}_%{dict7}*
