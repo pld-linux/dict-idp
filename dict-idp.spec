@@ -12,9 +12,9 @@ Summary(pl):	Darmowe S³owniki dla dictd z projektu IDP
 Name:		dict-%{dictname}
 Version:	19990219
 # Last update on their site
-Release:	1
+Release:	2
 License:	GPL
-# is this '#This file is free to use and modify.  Thank you for using the IDP.'
+# is this '#This file is free to use and modify. Thank you for using the IDP.'
 # compatible w/ Gnu GPL ???
 Group:		Applications/Dictionaries
 Source0:	http://www.aracnet.com/~tyler/IDP/files/%{dict1}.txt
@@ -23,16 +23,16 @@ Source2:	http://www.aracnet.com/~tyler/IDP/files/%{dict3}.txt
 Source3:	http://www.aracnet.com/~tyler/IDP/files/%{dict4}.txt
 Source4:	http://www.aracnet.com/~tyler/IDP/files/%{dict5}.txt
 Source5:	http://www.aracnet.com/~tyler/IDP/files/%{dict6}.txt
-#Source91:   www.wh9.tu-dresden.de/%7Eheinrich/dict/dict_idp/idp2dict.sh
+#Source91:	www.wh9.tu-dresden.de/%7Eheinrich/dict/dict_idp/idp2dict.sh
 # copyright info:
 Source98:	http://www.june29.com/IDP/IDPcopyright.html
 Source99:	http://www.june29.com/IDP/IDPdisclaimer.html
 URL:		http://www.june29.com/IDP/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
 Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package contains The Internet Dictionary Project's dictionaries,
@@ -161,8 +161,8 @@ for x in *.txt ; do
 done
 
 for x in $all_targets ; do
-	dictfmt -p -u "%{URL}" -s "Internet Dictionary Project"  $x < $x
-	dictzip  $x'.dict'
+	dictfmt -p -u "%{URL}" -s "Internet Dictionary Project" $x < $x
+	dictzip $x'.dict'
 done
 
 %install
@@ -172,12 +172,11 @@ install -d $RPM_BUILD_ROOT{%{_datadir}/dictd/,%{_sysconfdir}/dictd}
 for i in %{dictionaries}; do
 	dictprefix=%{_datadir}/dictd/%{dictname}_$i
 	echo "# The Internet Dictionary Project dictionaries
-	database $i {
-		data \"$dictprefix.dict.dz\"
-		index \"$dictprefix.index\"
-	}
-	" > $RPM_BUILD_ROOT%{_sysconfdir}/dictd/%{dictname}-$i.dictconf
-	install %{dictname}_$i* $RPM_BUILD_ROOT%{_datadir}/dictd/
+database $i {
+	data  \"$dictprefix.dict.dz\"
+	index \"$dictprefix.index\"
+}" > $RPM_BUILD_ROOT%{_sysconfdir}/dictd/%{dictname}-$i.dictconf
+	install %{dictname}_$i.* $RPM_BUILD_ROOT%{_datadir}/dictd/
 done
 
 %clean
@@ -246,29 +245,29 @@ fi
 %files %{dict1}
 %defattr(644,root,root,755)
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict1}.dictconf
-%{_datadir}/dictd/%{dictname}_%{dict1}*
+%{_datadir}/dictd/%{dictname}_%{dict1}.*
 
 %files %{dict2}
 %defattr(644,root,root,755)
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict2}.dictconf
-%{_datadir}/dictd/%{dictname}_%{dict2}*
+%{_datadir}/dictd/%{dictname}_%{dict2}.*
 
 %files %{dict3}
 %defattr(644,root,root,755)
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict3}.dictconf
-%{_datadir}/dictd/%{dictname}_%{dict3}*
+%{_datadir}/dictd/%{dictname}_%{dict3}.*
 
 %files %{dict4}
 %defattr(644,root,root,755)
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict4}.dictconf
-%{_datadir}/dictd/%{dictname}_%{dict4}*
+%{_datadir}/dictd/%{dictname}_%{dict4}.*
 
 %files %{dict5}
 %defattr(644,root,root,755)
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict5}.dictconf
-%{_datadir}/dictd/%{dictname}_%{dict5}*
+%{_datadir}/dictd/%{dictname}_%{dict5}.*
 
 %files %{dict6}
 %defattr(644,root,root,755)
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict6}.dictconf
-%{_datadir}/dictd/%{dictname}_%{dict6}*
+%{_datadir}/dictd/%{dictname}_%{dict6}.*
