@@ -23,7 +23,7 @@ Source2:	http://www.aracnet.com/~tyler/IDP/files/%{dict3}.txt
 Source3:	http://www.aracnet.com/~tyler/IDP/files/%{dict4}.txt
 Source4:	http://www.aracnet.com/~tyler/IDP/files/%{dict5}.txt
 Source5:	http://www.aracnet.com/~tyler/IDP/files/%{dict6}.txt
-#Source91:	www.wh9.tu-dresden.de/%7Eheinrich/dict/dict_idp/idp2dict.sh
+#Source91:	www.wh9.tu-dresden.de/~heinrich/dict/dict_idp/idp2dict.sh
 # copyright info:
 Source98:	http://www.june29.com/IDP/IDPcopyright.html
 Source99:	http://www.june29.com/IDP/IDPdisclaimer.html
