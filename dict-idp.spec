@@ -153,7 +153,7 @@ Ten pakiet zawiera s³ownik %{dict6} do u¿ywania z serwerem s³ownika
 dictd.
 
 %prep
-%setup -c -T
+%setup -q -c -T
 cp -f %{SOURCE0} %{SOURCE1} %{SOURCE2} %{SOURCE3} %{SOURCE4} %{SOURCE5} .
 
 %build
