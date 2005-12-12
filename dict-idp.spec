@@ -38,8 +38,8 @@ Source99:	http://www.june29.com/IDP/IDPdisclaimer.html
 URL:		http://www.june29.com/IDP/
 BuildRequires:	dictfmt
 BuildRequires:	dictzip
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -66,8 +66,8 @@ ich t³umaczeñ s± udostêpniane wszystkim, do nieograniczonego u¿ytku.
 Summary:	The %{dict1} dictionary for dictd
 Summary(pl):	S³ownik %{dict1} dla dictd
 Group:		Applications/Dictionaries
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 
 %description %{dict1}
 This package contains %{dict1} dictionaries for use by the dictionary
@@ -81,8 +81,8 @@ dictd.
 Summary:	The %{dict2} dictionary for dictd
 Summary(pl):	S³ownik %{dict2} dla dictd
 Group:		Applications/Dictionaries
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 
 %description %{dict2}
 This package contains %{dict2} dictionaries for use by the dictionary
@@ -96,8 +96,8 @@ dictd.
 Summary:	The %{dict3} dictionary for dictd
 Summary(pl):	S³ownik %{dict3} dla dictd
 Group:		Applications/Dictionaries
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 
 %description %{dict3}
 This package contains %{dict3} dictionaries for use by the dictionary
@@ -111,8 +111,8 @@ dictd.
 Summary:	The %{dict4} dictionary for dictd
 Summary(pl):	S³ownik %{dict4} dla dictd
 Group:		Applications/Dictionaries
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 
 %description %{dict4}
 This package contains %{dict4} dictionaries for use by the dictionary
@@ -126,8 +126,8 @@ dictd.
 Summary:	The %{dict5} dictionary for dictd
 Summary(pl):	S³ownik %{dict5} dla dictd
 Group:		Applications/Dictionaries
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 
 %description %{dict5}
 This package contains %{dict5} dictionaries for use by the dictionary
@@ -141,8 +141,8 @@ dictd.
 Summary:	The %{dict6} dictionary for dictd
 Summary(pl):	S³ownik %{dict6} dla dictd
 Group:		Applications/Dictionaries
-Requires:	dictd
 Requires:	%{_sysconfdir}/dictd
+Requires:	dictd
 
 %description %{dict6}
 This package contains %{dict6} dictionaries for use by the dictionary
@@ -252,30 +252,30 @@ fi
 
 %files %{dict1}
 %defattr(644,root,root,755)
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict1}.dictconf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}-%{dict1}.dictconf
 %{_datadir}/dictd/%{dictname}_%{dict1}.*
 
 %files %{dict2}
 %defattr(644,root,root,755)
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict2}.dictconf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}-%{dict2}.dictconf
 %{_datadir}/dictd/%{dictname}_%{dict2}.*
 
 %files %{dict3}
 %defattr(644,root,root,755)
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict3}.dictconf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}-%{dict3}.dictconf
 %{_datadir}/dictd/%{dictname}_%{dict3}.*
 
 %files %{dict4}
 %defattr(644,root,root,755)
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict4}.dictconf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}-%{dict4}.dictconf
 %{_datadir}/dictd/%{dictname}_%{dict4}.*
 
 %files %{dict5}
 %defattr(644,root,root,755)
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict5}.dictconf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}-%{dict5}.dictconf
 %{_datadir}/dictd/%{dictname}_%{dict5}.*
 
 %files %{dict6}
 %defattr(644,root,root,755)
-%attr(640,root,root) %config(noreplace) %verify(not size mtime md5) %{_sysconfdir}/dictd/%{dictname}-%{dict6}.dictconf
+%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dictd/%{dictname}-%{dict6}.dictconf
 %{_datadir}/dictd/%{dictname}_%{dict6}.*
