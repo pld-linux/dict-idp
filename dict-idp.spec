@@ -8,7 +8,7 @@
 %define		dictionaries	%{dict1} %{dict2} %{dict3} %{dict4} %{dict5} %{dict6}
 
 Summary:	The free dictionaries for dictd made from IDP project
-Summary(pl):	Darmowe s≥owniki dla dictd z projektu IDP
+Summary(pl.UTF-8):   Darmowe s≈Çowniki dla dictd z projektu IDP
 Name:		dict-%{dictname}
 Version:	19990219
 # Last update on their site
@@ -53,18 +53,18 @@ resulting lists of English words and their translated counterparts are
 then made available through this site to anyone, with no restrictions
 on their use.
 
-%description -l pl
-Ten pakiet zawiera darmowe s≥owniki z Internet Dictionary Project
-sformatowane do uøytku z serwerem s≥ownika dictd. Celem Internet
-Dictionary Project jest stworzenie wolnych od op≥at s≥ownikÛw
-t≥umaczeÒ w oparciu o pomoc spo≥eczno∂ci internetowej. Serwis IDP
-pozwala ludziom z ca≥ego ∂wiata na pomoc przy t≥umaczeniu angielskich
-s≥Ûw na inne jÍzyki. Powsta≥e w ten sposÛb listy angielskich s≥Ûw i
-ich t≥umaczeÒ s± udostÍpniane wszystkim, do nieograniczonego uøytku.
+%description -l pl.UTF-8
+Ten pakiet zawiera darmowe s≈Çowniki z Internet Dictionary Project
+sformatowane do u≈ºytku z serwerem s≈Çownika dictd. Celem Internet
+Dictionary Project jest stworzenie wolnych od op≈Çat s≈Çownik√≥w
+t≈Çumacze≈Ñ w oparciu o pomoc spo≈Çeczno≈õci internetowej. Serwis IDP
+pozwala ludziom z ca≈Çego ≈õwiata na pomoc przy t≈Çumaczeniu angielskich
+s≈Ç√≥w na inne jƒôzyki. Powsta≈Çe w ten spos√≥b listy angielskich s≈Ç√≥w i
+ich t≈Çumacze≈Ñ sƒÖ udostƒôpniane wszystkim, do nieograniczonego u≈ºytku.
 
 %package %{dict1}
 Summary:	The %{dict1} dictionary for dictd
-Summary(pl):	S≥ownik %{dict1} dla dictd
+Summary(pl.UTF-8):   S≈Çownik %{dict1} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -73,13 +73,13 @@ Requires:	dictd
 This package contains %{dict1} dictionaries for use by the dictionary
 server in the dictd package.
 
-%description %{dict1} -l pl
-Ten pakiet zawiera s≥ownik %{dict1} do uøywania z serwerem s≥ownika
+%description %{dict1} -l pl.UTF-8
+Ten pakiet zawiera s≈Çownik %{dict1} do u≈ºywania z serwerem s≈Çownika
 dictd.
 
 %package %{dict2}
 Summary:	The %{dict2} dictionary for dictd
-Summary(pl):	S≥ownik %{dict2} dla dictd
+Summary(pl.UTF-8):   S≈Çownik %{dict2} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -88,13 +88,13 @@ Requires:	dictd
 This package contains %{dict2} dictionaries for use by the dictionary
 server in the dictd package.
 
-%description %{dict2} -l pl
-Ten pakiet zawiera s≥ownik %{dict2} do uøywania z serwerem s≥ownika
+%description %{dict2} -l pl.UTF-8
+Ten pakiet zawiera s≈Çownik %{dict2} do u≈ºywania z serwerem s≈Çownika
 dictd.
 
 %package %{dict3}
 Summary:	The %{dict3} dictionary for dictd
-Summary(pl):	S≥ownik %{dict3} dla dictd
+Summary(pl.UTF-8):   S≈Çownik %{dict3} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -103,13 +103,13 @@ Requires:	dictd
 This package contains %{dict3} dictionaries for use by the dictionary
 server in the dictd package.
 
-%description %{dict3} -l pl
-Ten pakiet zawiera s≥ownik %{dict3} do uøywania z serwerem s≥ownika
+%description %{dict3} -l pl.UTF-8
+Ten pakiet zawiera s≈Çownik %{dict3} do u≈ºywania z serwerem s≈Çownika
 dictd.
 
 %package %{dict4}
 Summary:	The %{dict4} dictionary for dictd
-Summary(pl):	S≥ownik %{dict4} dla dictd
+Summary(pl.UTF-8):   S≈Çownik %{dict4} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -118,13 +118,13 @@ Requires:	dictd
 This package contains %{dict4} dictionaries for use by the dictionary
 server in the dictd package.
 
-%description %{dict4} -l pl
-Ten pakiet zawiera s≥ownik %{dict4} do uøywania z serwerem s≥ownika
+%description %{dict4} -l pl.UTF-8
+Ten pakiet zawiera s≈Çownik %{dict4} do u≈ºywania z serwerem s≈Çownika
 dictd.
 
 %package %{dict5}
 Summary:	The %{dict5} dictionary for dictd
-Summary(pl):	S≥ownik %{dict5} dla dictd
+Summary(pl.UTF-8):   S≈Çownik %{dict5} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -133,13 +133,13 @@ Requires:	dictd
 This package contains %{dict5} dictionaries for use by the dictionary
 server in the dictd package.
 
-%description %{dict5} -l pl
-Ten pakiet zawiera s≥ownik %{dict5} do uøywania z serwerem s≥ownika
+%description %{dict5} -l pl.UTF-8
+Ten pakiet zawiera s≈Çownik %{dict5} do u≈ºywania z serwerem s≈Çownika
 dictd.
 
 %package %{dict6}
 Summary:	The %{dict6} dictionary for dictd
-Summary(pl):	S≥ownik %{dict6} dla dictd
+Summary(pl.UTF-8):   S≈Çownik %{dict6} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -148,8 +148,8 @@ Requires:	dictd
 This package contains %{dict6} dictionaries for use by the dictionary
 server in the dictd package.
 
-%description %{dict6} -l pl
-Ten pakiet zawiera s≥ownik %{dict6} do uøywania z serwerem s≥ownika
+%description %{dict6} -l pl.UTF-8
+Ten pakiet zawiera s≈Çownik %{dict6} do u≈ºywania z serwerem s≈Çownika
 dictd.
 
 %prep
