@@ -8,7 +8,7 @@
 %define		dictionaries	%{dict1} %{dict2} %{dict3} %{dict4} %{dict5} %{dict6}
 
 Summary:	The free dictionaries for dictd made from IDP project
-Summary(pl.UTF-8):   Darmowe słowniki dla dictd z projektu IDP
+Summary(pl.UTF-8):	Darmowe słowniki dla dictd z projektu IDP
 Name:		dict-%{dictname}
 Version:	19990219
 # Last update on their site
@@ -64,7 +64,7 @@ ich tłumaczeń są udostępniane wszystkim, do nieograniczonego użytku.
 
 %package %{dict1}
 Summary:	The %{dict1} dictionary for dictd
-Summary(pl.UTF-8):   Słownik %{dict1} dla dictd
+Summary(pl.UTF-8):	Słownik %{dict1} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -79,7 +79,7 @@ dictd.
 
 %package %{dict2}
 Summary:	The %{dict2} dictionary for dictd
-Summary(pl.UTF-8):   Słownik %{dict2} dla dictd
+Summary(pl.UTF-8):	Słownik %{dict2} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -94,7 +94,7 @@ dictd.
 
 %package %{dict3}
 Summary:	The %{dict3} dictionary for dictd
-Summary(pl.UTF-8):   Słownik %{dict3} dla dictd
+Summary(pl.UTF-8):	Słownik %{dict3} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -109,7 +109,7 @@ dictd.
 
 %package %{dict4}
 Summary:	The %{dict4} dictionary for dictd
-Summary(pl.UTF-8):   Słownik %{dict4} dla dictd
+Summary(pl.UTF-8):	Słownik %{dict4} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -124,7 +124,7 @@ dictd.
 
 %package %{dict5}
 Summary:	The %{dict5} dictionary for dictd
-Summary(pl.UTF-8):   Słownik %{dict5} dla dictd
+Summary(pl.UTF-8):	Słownik %{dict5} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
@@ -139,7 +139,7 @@ dictd.
 
 %package %{dict6}
 Summary:	The %{dict6} dictionary for dictd
-Summary(pl.UTF-8):   Słownik %{dict6} dla dictd
+Summary(pl.UTF-8):	Słownik %{dict6} dla dictd
 Group:		Applications/Dictionaries
 Requires:	%{_sysconfdir}/dictd
 Requires:	dictd
